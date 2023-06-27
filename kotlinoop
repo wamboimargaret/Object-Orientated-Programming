@@ -12,6 +12,21 @@ fun main() {
    story2.tellStory("Maria", "Spanish")
    translator1.translateAndTell()
    translator2.translateAndTell()
+story1.tellStory("John", "English")
+    translator1.translateAndTell()
+    translator2.translateAndTell()
+
+    val lion = Predator("Lion", "meat", 15, "chase")
+    println(lion.dangerous())
+
+    val gazelle = Prey("Gazelle", "grass", 10)
+    println(gazelle.migration("food"))
+
+    val elephant = Species("Elephant", "plants", 70)
+    println(elephant.endangeredSpecies())
+
+    val elephantPrey = Prey("Elephant", "plants", 70)
+    println(elephantPrey.migration("reproduction"))
 
 
 
@@ -111,3 +126,34 @@ open   class Recipe (var ingredients:String,var preparationTime:String,var nutri
 
 
    }
+open class Species(val name: String, val diet: String, val lifespan: Int) {
+    fun endangeredSpecies(): String {
+        return if (lifespan <= 50) {
+            "Species is endangered"
+        } else {
+            "Species is extinct"
+        }
+    }
+}
+
+open class Predator(name: String, diet: String, lifespan: Int, val huntingMethod: String) :
+    Species(name, diet, lifespan) {
+    fun dangerous(): String {
+        return if (huntingMethod in listOf("stalk", "pounce", "chase")) {
+            "Predator is carnivore and feeds on $diet"
+        } else {
+            "Predator is herbivore and feeds on $diet"
+        }
+    }
+}
+
+open class Prey(name: String, diet: String, lifespan: Int) : Species(name, diet, lifespan) {
+    fun migration(need: String): String {
+        return if (need == "food") {
+            "$name migration is seasonal"
+        } else {
+            "$name is migrating in July"
+        }
+    }
+}
+
