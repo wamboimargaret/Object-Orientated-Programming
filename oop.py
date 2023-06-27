@@ -55,3 +55,100 @@ translator2 = Translator("The Tortoise and the Hare", "Medium", "Slow and steady
 translator1.translateAndTell()
 translator2.translateAndTell()
 
+class Recipe:
+   def __init__(self, ingredients, preparation_time, nutritional_information):
+       self.ingredients = ingredients
+       self.preparation_time = preparation_time
+       self.nutritional_information = nutritional_information
+
+
+   def display_recipe(self):
+       print("Ingredients:", self.ingredients)
+       print("Preparation Time:", self.preparation_time)
+       print("Nutritional Information:", self.nutritional_information)
+
+
+   def cooking_method(self):
+       print("Add four glasses of water")
+       print("Leave it to boil")
+        print("Add two spoons of salt")
+       print("Add three spoons of cooking oil")
+       print("Add half a kilo of rice")
+       print("Cover to simmer")
+
+
+
+
+class MoroccanRecipe(Recipe):
+
+
+   def display_recipe(self):
+
+
+       super().display_recipe()
+
+
+
+
+
+
+   def cooking_method(self):
+
+
+       print("On a pre-heated pan, add two spoons of cooking oil")
+
+
+       print("Add two well-sliced onions")
+
+
+       print("Add five well-chopped tomatoes")
+
+
+       print("Leave the tomatoes to get heated and create a paste")
+
+
+       print("Add boiled rice")
+
+
+
+
+
+
+
+
+
+
+class NigerianRecipe(Recipe):
+
+
+   def display_recipe(self):
+
+
+       super().display_recipe()
+
+
+
+
+
+
+   def cooking_method(self):
+        print("On a pre-heated pan, add two spoons of cooking oil")
+
+
+       print("Leave it to boil")
+
+
+       print("Add five well-chopped tomatoes")
+
+
+       print("Leave the tomatoes to get heated and create a paste")
+
+
+       print("Add boiled rice")
+
+
+
+
+
+
+
