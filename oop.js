@@ -51,3 +51,63 @@ story2.tellStory({ name: "Maria", language: "Spanish" });
 
 translator1.translateAndTell();
 translator2.translateAndTell(); 
+
+//  Question 2
+class Recepie{
+ constructor(ingredients,preparationTime,nutritionalInformation){
+   this.ingredients= ingredients;
+   this.preparationTime= preparationTime;
+   this.nutritionalInformation=nutritionalInformation
+ }
+ cookingMethod(){
+   console.log("Add  four glasses of water")
+   console.log("Leave it to boil")
+   console.log("Add two spoon of salt ")
+   console.log("Add three spoons of cooking oil ")
+   console.log("Add half a kilo of rice ")
+   console.log("Cover to simmer ")
+
+
+ }
+ }
+ class MoroccanRecpie extends Recepie{
+    constructor (ingredients, preperationTime)
+    {
+     super(ingredients, preperationTime );
+    }
+   displayRecipie(){
+     super.displayRecipie()
+   }
+   cookingMethod(){
+     super.cookingMethod()
+   }
+
+
+  }
+
+
+  class Nigerian extends Recepie{
+   constructor (ingredients, preperationTime)
+   {
+    super(ingredients, preperationTime );
+   }
+  displayRecipie(){
+    super.displayRecipie()
+  }
+  cookingMethod(){
+    super.cookingMethod()
+  }
+
+
+ }
+  
+ 
+  
+  let receipe1 = new Recepie('tomatoes','3 hours')
+   receipe1.cookingMethod()
+   console.log(receipe1.ingredients)
+   let receipe2=new MoroccanRecpie("Tomatoes","6 hours")
+   receipe2.cookingMethod()
+   console.log(receipe2.ingredients)
+
+
