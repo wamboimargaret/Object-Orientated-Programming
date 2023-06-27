@@ -147,6 +147,71 @@ class NigerianRecipe(Recipe):
         print("Add boiled rice")
 
 
+# **Wildlife Preservation:** You're a wildlife conservationist working on a
+# program to track different species in a national park. Each species has its own
+# characteristics and behaviors, such as its diet, typical lifespan, migration
+# patterns, etc. Some species might be predators, others prey. You'll need to
+
+# create classes to model `Species`, `Predator`, `Prey`, etc., and think about how
+# these classes might relate to each other through inheritance.
+
+
+
+
+
+class Species:
+   def __init__(self, name, diet, lifespan):
+       self.name = name
+       self.diet = diet
+       self.lifespan = lifespan
+      
+   def endangered_species(self):
+       if self.lifespan <= 50:
+           return "Species is endangered"
+       else:
+           return "Species is extinct"
+
+
+class Predator(Species):
+   def __init__(self, name, diet, lifespan, hunting_method):
+       super().__init__(name, diet, lifespan)
+       self.hunting_method = hunting_method
+      
+   def dangerous(self):
+       if self.hunting_method in ["stalk", "pounce", "chase"]:
+           return f"Predator is carnivore and feeds on {self.diet}"
+       else:
+           return f"Predator is herbivore and feeds on {self.diet}"
+
+
+class Prey(Species):
+   def __init__(self, name, diet, lifespan):
+       super().__init__(name, diet, lifespan)
+      
+   def migration(self, need):
+       if need == "food":
+           return f"{self.name} migration is seasonal"
+       elif need == "reproduction":
+           return f"{self.name} is migrating in July"
+
+
+
+
+lion = Predator("Lion", "meat", 15, "chase")
+print(lion.dangerous())
+
+
+gazelle = Prey("Gazelle", "grass", 10)
+print(gazelle.migration("food"))
+
+
+elephant = Species("Elephant", "plants", 70)
+print(elephant.endangered_species())
+
+
+elephant = Prey("Elephant", "plants", 70)
+print(elephant.migration("reproduction"))
+
 
 
 
