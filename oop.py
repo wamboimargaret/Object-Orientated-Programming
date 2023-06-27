@@ -71,7 +71,7 @@ class Recipe:
    def cooking_method(self):
        print("Add four glasses of water")
        print("Leave it to boil")
-        print("Add two spoons of salt")
+       print("Add two spoons of salt")
        print("Add three spoons of cooking oil")
        print("Add half a kilo of rice")
        print("Cover to simmer")
@@ -135,16 +135,16 @@ class NigerianRecipe(Recipe):
         print("On a pre-heated pan, add two spoons of cooking oil")
 
 
-       print("Leave it to boil")
+        print("Leave it to boil")
 
 
-       print("Add five well-chopped tomatoes")
+        print("Add five well-chopped tomatoes")
 
 
-       print("Leave the tomatoes to get heated and create a paste")
+        print("Leave the tomatoes to get heated and create a paste")
 
 
-       print("Add boiled rice")
+        print("Add boiled rice")
 
 
 
