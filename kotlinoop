@@ -1,0 +1,113 @@
+Kotlin Code
+fun main() {
+   val story1 = Story("The Lion and the Mouse", "Short", "Helping others is important", "Children")
+   val story2 = Story("The Tortoise and the Hare", "Medium", "Slow and steady wins the race", "Children")
+   val translator1 = Translator("The Lion and the Mouse", "Short", "Helping others is important", "Children", "Emma", "English", "French"
+   )
+   val translator2 = Translator("The Tortoise and the Hare", "Medium", "Slow and steady wins the race", "Children", "Luis", "Spanish", "English"
+   )
+
+
+   story1.tellStory("John", "English")
+   story2.tellStory("Maria", "Spanish")
+   translator1.translateAndTell()
+   translator2.translateAndTell()
+
+
+
+
+}
+open class Story(val title: String, val length: String, var moralLesson String, val ageGroup: String) {
+   fun displayDetails() {
+       println("Title: $title")
+       println("Length: $length")
+       println("Moral Lesson: $moralLesson")
+       println("Age Group: $ageGroup")
+   }
+   
+   fun tellStory( name: String,language: String) {
+       println("$name is telling a story in $language:")
+       displayDetails()
+   }
+}
+class Translator(title: String, length: String, moralLesson: String, ageGroup: String, val name: String, val language: String, val targetLanguage: String) : Story(title, length, moralLesson, ageGroup) {
+  
+   fun translateAndTell() {
+       println("$name is translating and telling a story in $targetLanguage:")
+       
+       val translatedStory = Story(title, length, moralLesson, ageGroup)
+       println("Translated Story:")
+       translatedStory.displayDetails()
+   }
+}
+open   class Recipe (var ingredients:String,var preparationTime:String,var nutritionalInformation:String) {
+
+
+   open fun displayRecipe() {
+       println("Ingredients $ingredients")
+       println("Preparation Time $preparationTime")
+       println("Nutritional Information $nutritionalInformation")
+
+
+
+
+   }
+
+
+   open fun cookingMethod() {
+       println("Add  four glasses of water")
+       println("Leave it to boil")
+       println("Add two spoon of salt ")
+       println("Add three spoons of cooking oil ")
+       println("Add half a kilo of rice ")
+       println("Cover to simmer ")
+
+
+   }
+
+
+}
+   class MoroccanRecipe(ingredients: String, preparationTime: String, nutritionalInformation: String) : Recipe(ingredients, preparationTime, nutritionalInformation) {
+       override fun displayRecipe() {
+           super.displayRecipe()
+       }
+
+
+       override fun cookingMethod() {
+
+
+           println("On a pre-heated pan  add two spoons of cooking oil")
+           println("Add two well sliced onions")
+           println("Add five well chopped tomatoes")
+           println("Leave the tomatoes to get heated and create a paste")
+ println("Add boiled rice")
+
+
+       }
+
+
+
+
+   }
+
+
+   class NigerianRecipe(ingredients: String, preparationTime: String, nutritionalInformation: String) : Recipe(ingredients, preparationTime, nutritionalInformation) {
+       override fun displayRecipe() {
+           super.displayRecipe()
+       }
+
+
+       override fun cookingMethod() {
+
+
+           println("On a pre-heated pan  add two spoons of cooking oil")
+           println("Leave it to boil")
+           println("Add five well chopped tomatoes")
+           println("Leave the tomatoes to get heated and create a paste")
+           println("Add boiled rice")
+
+
+       }
+
+
+   }
